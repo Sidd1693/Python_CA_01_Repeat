@@ -11,3 +11,33 @@
 #Value is correct after adding some additional items of another product
 #Cannot add a negative quantity (Error)
 #Cannot add something not in the pricelist (Should give a ValueError!)
+
+class Basket:
+	def __init__(self) -> None:
+		self.list = {}
+
+	def addItem(self, item, quantity):
+		if quantity < 1:
+			print("[Error] Cannot add a negative quantity")
+			return
+		
+		if item not in pricelist:
+			print("[Error] Value Error")
+			return
+
+		if item in self.list: self.list[item] += quantity
+		else: self.list[item] = quantity
+
+	def getCost(self):
+		s = 0
+		for item in self.list:
+			s += pricelist[item] * self.list[item]
+		return s
+		
+	
+pricelist = {
+	"A": 100,
+	"B": 200,
+	"C": 250,
+	"D": 150
+}
