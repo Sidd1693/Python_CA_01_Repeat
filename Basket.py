@@ -12,10 +12,12 @@
 #Cannot add a negative quantity (Error)
 #Cannot add something not in the pricelist (Should give a ValueError!)
 
+#Creating Class Basket
 class Basket:
 	def __init__(self) -> None:
 		self.list = {}
 
+#Setting Condition and Checking for Error
 	def addItem(self, item, quantity):
 		if quantity < 1:
 			print("[Error] Cannot add a negative quantity")
@@ -34,7 +36,8 @@ class Basket:
 			s += pricelist[item] * self.list[item]
 		return s
 		
-	
+
+#Creating Dictionary PriceList
 pricelist = {
 	"A": 100,
 	"B": 200,
@@ -42,6 +45,8 @@ pricelist = {
 	"D": 150
 }
 
+
+#Calculating Cost Based Selected Products
 b = Basket()
 while True:
 	print("1. Add Item")
