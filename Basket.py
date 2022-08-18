@@ -41,3 +41,20 @@ pricelist = {
 	"C": 250,
 	"D": 150
 }
+
+b = Basket()
+while True:
+	print("1. Add Item")
+	print("2. Get Cost")
+	print("3. Exit")
+	ch = int(input("Enter your choice: "))
+	if ch == 1:
+		product = input("Enter the product: ")
+		quantity = int(input("Enter the no. of quantity: "))
+		b.addItem(product, quantity)
+	elif ch == 2:
+		print(b.getCost())
+	elif ch == 3:
+		break
+	else:
+		print("Invalid Choice")
